@@ -1,3 +1,4 @@
+// jmsv2001
 // No cambies los nombres de las funciones.
 
 function obtenerMayor(x, y) {
@@ -5,12 +6,22 @@ function obtenerMayor(x, y) {
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
+  if(x == y){
+  return x;
+  }
+  if (x > y){
+  return x;
+  }else{
+  return y;}
 }
 
 function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
+  if(edad >= 18){
+  return "Allowed";}
+  else{return "Not allowed";}
 }
   
 function conection(status) {
@@ -19,6 +30,11 @@ function conection(status) {
   //Cuando el estado es igual a 2, el usuario está "Away"
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
+  if(status != 1 && status != 2){
+  return "Offline";}
+  if( status == 1){
+  return "Online";}
+  else{ return "Away"}
 }
 
 function saludo(idioma) {
@@ -28,8 +44,39 @@ function saludo(idioma) {
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
-}
+  if(idioma == "aleman"){
+  return "Guten Tag!";
+  }
+  if(idioma == "mandarin"){
+  return "Ni Hao!";
+  }
+  if(idioma == "ingles"){
+  return "Hello!";
+  }else {return "Hola!";}
+  }
 
+/*function colors(color) {
+  //La función recibe un color. Devolver el string correspondiente:
+  //En caso que el color recibido sea "blue", devuleve --> "This is blue"
+  //En caso que el color recibido sea "red", devuleve --> "This is red"
+  //En caso que el color recibido sea "green", devuleve --> "This is green"
+  //En caso que el color recibido sea "orange", devuleve --> "This is orange"
+  //Caso default: devuelve --> "Color not found"
+  //Usar el statement Switch.
+  if(color == "blue"){
+  return "This is blue";
+  }
+  if(color == "red"){
+  return "This is red";
+  }
+  if(color == "green"){
+  return "This is green";
+  }
+  if(color == "orange"){
+  return "This is orange";
+  }else{return "Color not found";}
+  
+}*/
 function colors(color) {
   //La función recibe un color. Devolver el string correspondiente:
   //En caso que el color recibido sea "blue", devuleve --> "This is blue"
@@ -38,18 +85,49 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
-}
-
+  switch (color){
+  case "blue":
+  	return "This is blue";
+  	break;
+  
+  case "red": 
+  	return "This is red";
+  	break;
+  
+  case "green":
+  	return "This is green";
+  	break;
+  
+  case "orange":
+  	return "This is orange";
+  	break;
+  
+  default:
+  	return "Color not found";
+  }
+  
+  }
+  
 function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
+  switch (numero){
+  case 5:
+  case 10:
+  	return true;
+  default:
+  	return false;
+  }
 }
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
+  if( numero > 20 && numero < 50){
+  return true;
+  } else {return false;}
 }
 
 function esEntero(numero) {
@@ -60,6 +138,10 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
+  var resta = numero - Math.floor(numero);
+  if (resta == 0){
+  return true;
+  }else {return false;}
 }
 
 function fizzBuzz(numero) {
@@ -67,15 +149,47 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
+  var restodivtres = numero % 3;
+  var restodivcinco = numero % 5;
+  if (restodivtres == 0 && restodivcinco == 0)
+  {
+    return ("fizzbuzz");
+  } else if (restodivtres == 0 && restodivcinco != 0)
+             {
+              return("fizz");
+              } else if (restodivtres != 0 && restodivcinco == 0)
+                        {return ("buzz")}else return (numero);
+}
+
+     
 }
 
 function operadoresLogicos(num1, num2, num3) {
-  //La función recibe tres números distintos. 
+  //La función recibe tres números distintos.
   //Si num1 es mayor a num2 y a num3 y además es positivo, retornar ---> "Número 1 es mayor y positivo"
   //Si alguno de los tres números es negativo, retornar ---> "Hay negativos"
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
-  //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
+  //Si no se cumplen ninguna de las condiciones anteriores, retornar false.
+
+  var textnum1 = "Número 1 es mayor y positivo";
+  var negativos = "Hay negativos";
+  var nuevoNum3 = num3 + 1;
+
+  if (num1 == 0 || num2 == 0 || num3 == 0)
+   {
+	return ("Error");
+   } else if (num1 > 0 && num1 > num2 && num1 > num3)
+      	   {
+      		return textnum1;
+      	   } else if (num1 < 0 || num2 < 0 || num3 < 0)
+		   {
+			return negativos;
+		   } else if (num3 > num1 && num3 > num2 )
+			   {
+				return nuevoNum3;
+			   } else return false;
+      
 }
 
 function esPrimo(numero) {
@@ -84,12 +198,35 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
+
+var resto = 0;
+
+if (numero == 0 || numero == 1)
+{
+return
+}
+for (let i = 1; i <= numero; i++)
+{
+	if ((numero % i) == 0)
+	 {
+		resto++;
+	 } 
+}
+
+if (resto <= 2)
+{
+ return "true";
+} else return "falso";
 }
 
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
+if (valor === true)
+{
+return "Soy verdadero";
+} else return "Soy falso";
 
 }
 
@@ -97,19 +234,37 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  
+const tabla_6 = [];
+for (let i = 0; i <= 10; i++)
+  { 
+    tabla_6[i] = 6 * i;
+    //console.log (tabla_6[i]);
+  }
 }
+
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  
+if (numero < 1000 && numero > -1000)
+ {
+	return true;
+ }else return false;
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+let i = 0;
+let resultado = numero;
+
+do{
+resultado = resultado + 5;
+i++;
+//console.log(resultado);
+} while (i <= 8 - 1 );
+return resultado;
 }
 
 

@@ -138,20 +138,18 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-let multi = 1;
+ let producto = 1;
 
-  if (arguments.length == 0)
-  	{
-  	return 0;
-  	}
-  	if (arguments.length == 1 ) 
-  		{
-  		return arguments[0];
-  		}else for (let i =0; i < arguments.length; i++)
-  			{
-  			multi = multi * arguments[i];
-  			}
-return multi;
+ if (arguments.length == 0) // Si no hay argumentos
+ {
+   return 0;
+ }
+
+  for (let i = 0; i < arguments.length; i++)
+{
+producto = producto * arguments[i];
+}
+return producto;  
 }
 
 
@@ -313,18 +311,13 @@ let nuevoArray = [];
 
 for (let i = 0; i < 9; i++)
   {
+	//if( i === 5)
+	//{
+	//nuevoArray[5] = numeroMasDos;
+	//continue;
+	//}
 	numeroMasDos = numeroMasDos + 2;
-//	if( i === 5)
-//	{
-//	nuevoArray[5] = numeroMasDos + 2;
-//	nuevoArray[5] = 2;
-//	nuevoArray[5] = numeroMasDos + 4;
-//	continue;
-////	}
-//	numeroMasDos = numeroMasDos + 2;
-
 	nuevoArray[i] = numeroMasDos;
-
   }
 return nuevoArray;
 }

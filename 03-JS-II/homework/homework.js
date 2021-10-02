@@ -158,11 +158,11 @@ function fizzBuzz(numero) {
              {
               return("fizz");
               } else if (restodivtres != 0 && restodivcinco == 0)
-                        {return ("buzz")}else return (numero);
+                        {
+                          return ("buzz")
+                        }else return (numero);
 }
 
-     
-}
 
 function operadoresLogicos(num1, num2, num3) {
   //La función recibe tres números distintos.
@@ -172,23 +172,26 @@ function operadoresLogicos(num1, num2, num3) {
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false.
 
-  var textnum1 = "Número 1 es mayor y positivo";
-  var negativos = "Hay negativos";
-  var nuevoNum3 = num3 + 1;
+  let textnum1 = "Número 1 es mayor y positivo";
+  let negativos = "Hay negativos";
+  let nuevoNum3 = num3 + 1;
 
-  if (num1 == 0 || num2 == 0 || num3 == 0)
+  if (num1 == 0 || num2 == 0 || num3 == 0) // Si alguno es 0 
    {
 	return ("Error");
-   } else if (num1 > 0 && num1 > num2 && num1 > num3)
-      	   {
-      		return textnum1;
-      	   } else if (num1 < 0 || num2 < 0 || num3 < 0)
-		   {
-			return negativos;
-		   } else if (num3 > num1 && num3 > num2 )
-			   {
-				return nuevoNum3;
-			   } else return false;
+   } 
+   if (num1 < 0 || num2 < 0 || num3 < 0)  // Si alguno es negativo
+	 {
+	   return negativos;
+	 }
+   if (num1 > 0 && num1 > num2 && num1 > num3)  // Si N1 es mayor
+   {
+   	return textnum1;
+   }
+      if (num3 > num1 && num3 > num2 )  //Si N3 es mayor
+	 {
+	  return nuevoNum3;
+	 } else return false;
       
 }
 
@@ -199,11 +202,11 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
 
-var resto = 0;
+let resto = 0;
 
-if (numero == 0 || numero == 1)
+if (numero == 0 || numero == 1) //  Si es 0 o 1
 {
-return
+return false;
 }
 for (let i = 1; i <= numero; i++)
 {
@@ -215,8 +218,8 @@ for (let i = 1; i <= numero; i++)
 
 if (resto <= 2)
 {
- return "true";
-} else return "falso";
+ return true;
+} else return false;
 }
 
 function esVerdadero(valor){
@@ -240,13 +243,14 @@ for (let i = 0; i <= 10; i++)
     tabla_6[i] = 6 * i;
     //console.log (tabla_6[i]);
   }
+  return tabla_6;
 }
 
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-if (numero < 1000 && numero > -1000)
+if (numero < 1000 && numero > 99) // && numero < -99 && numero > -1000)
  {
 	return true;
  }else return false;

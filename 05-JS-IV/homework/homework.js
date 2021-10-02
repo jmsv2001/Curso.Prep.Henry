@@ -7,10 +7,10 @@ function crearGato(nombre, edad) {
   // Devuelve el objeto
   // Tu código:
   let gato = {
-    name: nombre,
-    age: edad,
+    nombre: nombre,
+    edad: edad,
     meow: function(){
-                    return "Meow";
+                    return "Meow!";
                     }
   };
   return gato;
@@ -164,23 +164,15 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
 
-  /*Object.defineProperty(producto, "calcularPrecioDescuento", {
-  value: function()
-          {
-            let ProductoConDescuento = 0;
-            ProductoConDescuento = producto.precio * producto.porcentajeDeDescuento;
-            producto.precio = producto.precio - ProductoConDescuento;
-            return producto;
-          }
-        },);
-  }*/
   producto.calcularPrecioDescuento = function()
 					{ 
             let Descuento = 0;
             Descuento = producto.precio * producto.porcentajeDeDescuento; 
 					  producto.precio = producto.precio - Descuento;
-					  return producto;
+            return producto.precio;
+
 					};
+  return producto;
   }
 
 

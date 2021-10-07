@@ -104,3 +104,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# ISB Archivos que empiecen con ISB
+ISB*.*
+.gitignore
